@@ -1,8 +1,9 @@
-# Angular 2 QuickStart Source
-[![Build Status][travis-badge]][travis-badge-url]
+# ng2 Router Test
 
-This repository holds the TypeScript source code of the [angular.io quickstart](https://angular.io/docs/ts/latest/quickstart.html),
+This repository is based on the TypeScript source code of the [angular.io quickstart](https://angular.io/docs/ts/latest/quickstart.html),
 the foundation for most of the documentation samples and potentially a good starting point for your application.
+
+This repo demonstrates using the router in conjunction with authentication and authorization.  It uses multiple routes, the admin path requires authorization.  I set up a mock security service for logging on and off.
 
 It's been extended with testing support so you can start writing tests immediately.
 
@@ -14,26 +15,26 @@ Please keep that in mind before posting issues and PRs.
 
 ## Prerequisites
 
-Node.js and npm are essential to Angular 2 development. 
-    
+Node.js and npm are essential to Angular 2 development.
+
 <a href="https://docs.npmjs.com/getting-started/installing-node" target="_blank" title="Installing Node.js and updating npm">
 Get it now</a> if it's not already installed on your machine.
- 
+
 **Verify that you are running at least node `v5.x.x` and npm `3.x.x`**
 by running `node -v` and `npm -v` in a terminal/console window.
 Older versions produce errors.
 
-We recommend [nvm](https://github.com/creationix/nvm) for managing multiple versions of node and npm.
+Try [nvm](https://github.com/creationix/nvm) for managing multiple versions of node and npm.
 
-## Create a new project based on the QuickStart
+## Create a new project based on this repository
 
 Clone this repo into new project folder (e.g., `my-proj`).
 ```bash
-git clone  https://github.com/angular/quickstart  my-proj
+git clone  https://github.com/jrezuke/ng2RouterTest  my-proj
 cd my-proj
 ```
 
-We have no intention of updating the source on `angular/quickstart`.
+I have no intention of updating the source on `jrezuke/ng2RouterTest`.
 Discard everything "git-like" by deleting the `.git` folder.
 ```bash
 rm -rf .git  // non-Windows
@@ -75,7 +76,7 @@ npm start
 
 > `npm run typings -- install`
 
-The `npm start` command first compiles the application, 
+The `npm start` command first compiles the application,
 then simultaneously re-compiles and runs the `lite-server`.
 Both the compiler and the server watch for file changes.
 
@@ -102,7 +103,6 @@ Here are the test related scripts:
 
 ## Testing
 
-The QuickStart documentation doesn't discuss testing.
 This repo adds both karma/jasmine unit test and protractor end-to-end testing support.
 
 These tools are configured for specific conventions described below.
@@ -142,7 +142,7 @@ we configured protractor to find them.
 Thereafter, run them with `npm run e2e`.
 
 That command first compiles, then simultaneously starts the Http-Server at `localhost:8080`
-and launches protractor.  
+and launches protractor.
 
 The pass/fail test results appear at the bottom of the terminal window.
 A custom reporter (see `protractor.config.js`) generates a  `./_test-output/protractor-results.txt` file
@@ -150,5 +150,3 @@ which is easier to read; this file is excluded from source control.
 
 Shut it down manually with Ctrl-C.
 
-[travis-badge]: https://travis-ci.org/angular/quickstart.svg?branch=master
-[travis-badge-url]: https://travis-ci.org/angular/quickstart
