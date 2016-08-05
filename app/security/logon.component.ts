@@ -11,10 +11,13 @@ export class LogonComponent implements OnInit {
     //userName: string;
     //password: string;
     message: string;
+    redirectUrl: string;
 
     constructor(private _security: SecurityService, private _router: Router) { }
 
-    ngOnInit() { }
+    ngOnInit() {
+        this.redirectUrl = this._security.RedirectUrl;
+    }
 
     onSubmit(form:any) {
 

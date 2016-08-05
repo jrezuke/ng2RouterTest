@@ -10,11 +10,9 @@ export class SecurityGuard implements CanActivate {
       console.log("route:", route);
       console.log("state:", state);
       if (this._security.IsAuthorized) {
-          this._security.RedirectUrl = state.url;
           return true;
-
       }
-
+      this._security.RedirectUrl = state.url;
       this.router.navigate(['/logon']);
   }
 }
