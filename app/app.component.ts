@@ -4,7 +4,8 @@ import { SecurityService } from './security/security.service'
 @Component({
     selector: 'my-app',
     directives: [ROUTER_DIRECTIVES],
-    templateUrl: 'app/app.component.html'
+    templateUrl: 'app/app.component.html',
+    cssUrl: 'app/app.component.css'
 
 })
 export class AppComponent implements OnInit {
