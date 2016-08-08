@@ -16,14 +16,19 @@ export class LogonComponent implements OnInit {
     constructor(private _security: SecurityService, private _router: Router) { }
 
     ngOnInit() {
-        this.redirectUrl = this._security.RedirectUrl;
+        if (this._security.RedirectUrl) {
+            this.redirectUrl = this._security.RedirectUrl;
+        }
+        else {
+            this.redirectUrl = "";
+        }
     }
 
     onSubmit(form:any) {
 
         if (this._security.authorizeUser(form.userName, form.password)) {
             this.message = "user is authorized"
-            if (this._security.RedirectUrl.length) {
+            if (this._security.RedirectUrl) {
                 this._router.navigate([this._security.RedirectUrl]);
             }
         }
